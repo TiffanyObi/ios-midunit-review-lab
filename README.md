@@ -9,6 +9,14 @@ Input: `Hello, there`
 
 Output: `HELLO, THERE`
 
+Answer: 
+var newString = "Hello,there"
+
+var newString1 = newString.uppercased()
+print(newString)
+
+
+
 2. **Given a String, return a String alternating between uppercase and lowercase letters**
 
 
