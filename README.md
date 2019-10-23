@@ -13,7 +13,7 @@ Answer:
 var newString = "Hello,there"
 
 var newString1 = newString.uppercased()
-print(newString)
+print(newString1)
 
 
 
@@ -24,12 +24,40 @@ Input: `Hello, there`
 
 Output: `HeLlO, tHeRe`
 
+Answer: 
+var inputString = "Hello,there"
+var outputString: String = ""
+var counter = 2
+
+for char in inputString {
+    if char.isLetter && counter % 2 == 0 {
+        outputString.append(char.uppercased())
+        counter += 1
+    } else if char.isLetter && counter % 2 == 1 {
+            outputString.append(char.lowercased())
+            counter += 1
+    } else {
+        outputString.append(char)
+    }
+}
+print(outputString)
+// print(counter) = this is 12. there are 10 characters in the string and we started at 2. this shows how many times we've looped through the string which made this problem make more sense for me. 
+
 
 3. **Given a String, return a String with all occurrences of a given letter removed**
 
 Input: `Hello, there`
 
 Output: `Hllo, thr`
+
+Answer:
+var newString2 = ""
+for char in inputString {
+    if char != "e" {
+        newString2.append(char)
+    }
+}
+print(newString2)
 
 
 ## Arrays
@@ -41,11 +69,30 @@ Input: `[1,5,2,4,1,4]`
 
 Output: `5`
 
+Answer:
+var inputArray:[Int] = [1,5,2,4,1,4]
+
+var highestNumber = 0
+
+for num in inputArray {
+    if num > highestNumber {
+        highestNumber = num
+    }
+}
+print(highestNumber)
+
 2. **Given an array of type [Int], return the smallest element**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `1`
+
+Answer:
+var inputArray:[Int] = [1,5,2,4,1,4]
+
+var orderArray = inputArray.sorted()
+print(orderArray[0])
+
 
 3. **Given an array of type [Int], return its sum**
 
@@ -53,11 +100,30 @@ Input: `[1,5,2,4,1,4]`
 
 Output: `17`
 
+Answer:
+var inputArray2 = [1,5,2,4,1,4]
+var arraytotalCount = 0
+for num in inputArray2 {
+    arraytotalCount += num
+}
+print(arraytotalCount)
+
 4. **Given an array of type [Double], return its average**
 
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `3.6`
+
+Answer:
+var inputArray3: [Double] = [3,4.5,7.5,2,1]
+var sum: Double = 0
+
+for num in inputArray3 {
+    (sum += num / Double(inputArray3.count))
+}
+
+print(sum)
+
 
 5. **Given an array of type [Double] and a Double, return the sum of all numbers in the array greater than a given number**
 
@@ -65,12 +131,33 @@ Input: `[3,4.5,7.5,2,1], 3`
 
 Output: `12`
 
+Answer:
+var inputArray4:[Double] = [3,4.5,7.5,2,1]
+var givenNumber:Double = 3
+var greaterThanGivenNumber:Double = 0
+
+for num in inputArray4 {
+    if num > givenNumber {
+        greaterThanGivenNumber += num
+        }
+}
+print(greaterThanGivenNumber)
 
 6. **Given an array of type [Double], return the product of all the elements**
 
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `202.5`
+
+Answer:
+var inputArray5:[Double] = [3,4.5,7.5,2,1]
+var product: Double = 1
+
+for num in inputArray5 {
+    product *= num
+}
+print(product)
+
 
 7. **Given an array of type [Int], return the second smallest value in the array**
 
