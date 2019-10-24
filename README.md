@@ -165,6 +165,38 @@ Input: `[3,6,1,9,4,8]`
 
 Output: `3`
 
+Answer:
+var inputArray6: [Int] = [3,6,1,9,4,8]
+var inputArraySorted = inputArray6.sorted()
+var uniqueSortedInputArray:[String] = []
+var smallestValue:String = ""
+var secondSmallestValue:String = ""
+
+func findSecondSmallestValue (arr: [Int]) -> (String) {
+    for index in inputArraySorted {
+
+if uniqueSortedInputArray.contains(String(index)) {
+            continue
+            } else {
+                uniqueSortedInputArray.append(String(index))
+            }
+        }
+            
+smallestValue.append(uniqueSortedInputArray[0])
+    
+secondSmallestValue.append(uniqueSortedInputArray[1])
+    
+if Int(secondSmallestValue) ?? 1 > Int(smallestValue) ?? 1 {
+        
+print("\(secondSmallestValue) is the second smallest value in the array!")
+    } else {
+    print("Something went wrong.")
+}
+    return secondSmallestValue
+}
+
+findSecondSmallestValue(arr: inputArray6)
+
 ## Optionals
 
 1. **Given an array of type [String?] return an array of [String] removing all nil values**
@@ -173,11 +205,36 @@ Input: `[nil, "We", "come", nil, "in", "peace"]`
 
 Output: `["We", "come", "in", "peace"]`
 
+Answer:
+var optArray = [nil, "We", "come", nil, "in", "peace"]
+
+var unOptArray:[String] = []
+
+for index in optArray {
+    if index != nil {
+        unOptArray.append((index ?? ""))
+    }
+}
+
+print(unOptArray)
+
 2. **Given an array of type [String?]? return an array of [String] removing all nil values**
 
 Input: `nil`
 
 Output: `[]`
+
+Answer:
+var optString:String? = nil
+
+var unOptArray2:[String] = []
+
+for char in optArray {
+    if char != nil {
+        unOptArray.append((char ?? ""))
+    }
+}
+print(unOptArray2)
 
 3. **Given an array of type [Int?] return the sum of all non-nil values.  Use guard statements in your solution.**
 
@@ -185,11 +242,41 @@ Input: `[4, nil, 9, 5, nil]`
 
 Output: `18`
 
+Answer:
+func sumOfNonNil(array: [Int?]) -> Int {
+    guard var sumOfArray:Int = 0  else {
+        return Int()
+    }
+    for index in inputArray7 {
+        if index != nil {
+            sumOfArray += index ?? 0
+            }
+        }
+    return sumOfArray
+}
+print(sumOfNonNil(array: inputArray7))
+
 4. **Given an array of type [Int?]? return the sum of all non-nil values.  Use guard statements in your solution.**
 
 Input: `nil`
 
 Output: `0`
+
+Answer:
+
+let nilInts: [Int?]? = nil
+
+func findNotNil(_ : [Int?]?) -> Int {
+for char in nilInts ?? [Int?]() {
+    guard var notNil: Int = 0 else {
+    }
+    if char != nil {
+        notNil += char ?? 0
+    }
+}
+    return Int()
+}
+print(findNotNil(nilInts))
 
 5. **Given an array of type [Int?] and an optional Int, return the sum of all values not equal to the given number.  If the given number is nil, return the sum of all non-nil values.**
 
@@ -197,6 +284,24 @@ Input: `[1, 1, nil, 3, 5, nil, 1, nil, 3, 5, nil, 5, nil, 3], 1`
 
 Output: `24`
 
+Answer:
+var inputArray8: [Int?] = [1, 1, nil, 3, 5, nil, 1, nil, 3, 5, nil, 5, nil, 3]
+var givenNum = 1
+var notNilSUM = 0
+
+func notNilSum(_: [Int?] ) -> Int {
+
+for num in inputArray8 {
+        
+if num != nil && num != givenNum {
+       
+notNilSUM += num ?? 0
+    }
+}
+    return notNilSUM
+}
+
+print(notNilSum(inputArray8))
 
 ## Dictionaries
 
